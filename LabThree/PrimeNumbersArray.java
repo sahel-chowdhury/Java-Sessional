@@ -46,3 +46,4 @@ public class PrimeNumbersArray {
         sc.close();
     }
 }
+
