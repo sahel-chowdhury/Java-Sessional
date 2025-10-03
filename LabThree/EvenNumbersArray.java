@@ -32,3 +32,4 @@ public class EvenNumbersArray {
         sc.close();
     }
 }
+
