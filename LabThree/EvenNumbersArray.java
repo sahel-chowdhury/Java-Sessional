@@ -1,35 +1,50 @@
 import java.util.Scanner;
 
-public class EvenNumbersArray {
+public class EvenNumbers {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+
+        Scanner input = new Scanner(System.in);
 
         System.out.print("Enter starting number: ");
-        int start = sc.nextInt();
-        System.out.print("Enter ending number: ");
-        int end = sc.nextInt();
+        int start = input.nextInt();
 
+        System.out.print("Enter ending number: ");
+        int end = input.nextInt();
+
+        // Step 1: Count even numbers
         int count = 0;
-        for (int i = start; i <= end; i++) {
+        int i = start;
+        while (i <= end) {
             if (i % 2 == 0) {
                 count++;
             }
+            i++;
         }
 
-        int[] evens = new int[count];
+        // Step 2: Create array
+        int[] evenArray = new int[count];
+
+        // Step 3: Store even numbers in array (using while)
+        i = start;
         int index = 0;
-        for (int i = start; i <= end; i++) {
+        while (i <= end) {
             if (i % 2 == 0) {
-                evens[index] = i;
+                evenArray[index] = i;
                 index++;
             }
+            i++;
         }
 
-      System.out.println("Even numbers in the range:");
-        for (int i = 0; i < evens.length; i++) {
-            System.out.print(evens[i] + " ");
+        // Step 4: Print even numbers using do-while loop
+        System.out.println("\nEven numbers are:");
+        int j = 0;
+        if (evenArray.length > 0) {
+            do {
+                System.out.print(evenArray[j] + " ");
+                j++;
+            } while (j < evenArray.length);
+        } else {
+            System.out.println("No even numbers found.");
         }
-        sc.close();
     }
 }
-
